@@ -1,0 +1,64 @@
+#ieee-batch-panel {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  width: 300px;
+  background: #ffffff;
+  border: 2px solid #00629B; /* IEEE Blue */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 99999;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  border-radius: 8px;
+}
+
+#ieee-batch-panel h3 {
+  margin-top: 0;
+  color: #00629B;
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+#ieee-batch-panel .status-text {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+}
+
+#ieee-batch-panel button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background-color: #00629B;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #004f7c;
+}
+
+.btn-secondary {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background-color: #d0d0d0;
+}
+
+.btn-disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  pointer-events: none;
+}

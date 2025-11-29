@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "IEEE Xplore Batch Downloader",
+  "version": "1.0",
+  "description": "Automate batch downloading of PDFs from IEEE Xplore with confirmation steps.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://ieeexplore.ieee.org/*"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ]
+}
