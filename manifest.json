@@ -9,7 +9,7 @@
   ],
   "content_scripts": [
     {
-      "matches": ["*://ieeexplore.ieee.org/*", "*://dl.acm.org/action/*"],
+      "matches": ["*://ieeexplore.ieee.org/*"],
       "js": ["content.js"],
       "css": ["style.css"]
     }
