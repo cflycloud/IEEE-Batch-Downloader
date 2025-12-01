@@ -1,4 +1,4 @@
-(function() {
+(function () {
     // 状态变量
     let allCheckboxes = [];
     let currentBatchIndex = 0;
@@ -26,12 +26,12 @@
 
     function updateStatus(msg) {
         const el = document.getElementById('status-msg');
-        if(el) el.innerText = msg;
+        if (el) el.innerText = msg;
     }
 
     function toggleBtn(id, enable) {
         const btn = document.getElementById(id);
-        if(!btn) return;
+        if (!btn) return;
         btn.classList.toggle('btn-disabled', !enable);
     }
 
@@ -86,19 +86,19 @@
 
         // 如果识别数量过少（比如只有1个），可能是规则太严，给用户提示
         if (totalPapers < 2) {
-             console.warn("警告：只识别到少于2个复选框，可能存在识别问题。");
+            console.warn("警告：只识别到少于2个复选框，可能存在识别问题。");
         }
 
         // 清空所有已选
         rawCheckboxes.forEach(cb => {
-            if(cb.checked) cb.click(); 
+            if (cb.checked) cb.click();
         });
 
         currentBatchIndex = 0;
         updateStatus(`识别成功！\n共找到 ${totalPapers} 篇论文 (已过滤侧边栏)。\n点击【下一批】开始勾选前 10 篇。`);
-        
+
         toggleBtn('btn-start', false);
-        toggleBtn('btn-next', true); 
+        toggleBtn('btn-next', true);
         // 这里改变逻辑：初始化后不自动勾选，让用户点一次 Next 明确开始
     }
 
@@ -108,7 +108,7 @@
         if (currentBatchIndex > 0) {
             const prevStart = (currentBatchIndex - 1) * batchSize;
             const prevEnd = prevStart + batchSize;
-             for (let i = prevStart; i < prevEnd && i < totalPapers; i++) {
+            for (let i = prevStart; i < prevEnd && i < totalPapers; i++) {
                 if (allCheckboxes[i] && allCheckboxes[i].checked) {
                     allCheckboxes[i].click();
                 }
@@ -137,11 +137,11 @@
         }
 
         currentBatchIndex++;
-        
-        updateStatus(`第 ${currentBatchIndex} 批 (第 ${start+1}-${end} 篇)\n已勾选 ${checkedCount} 个。\n\n确认无误后，点击【下载当前批次】。`);
-        
+
+        updateStatus(`第 ${currentBatchIndex} 批 (第 ${start + 1}-${end} 篇)\n已勾选 ${checkedCount} 个。\n\n确认无误后，点击【下载当前批次】。`);
+
         toggleBtn('btn-download', true);
-        toggleBtn('btn-next', false);
+        toggleBtn('btn-next', true);
     }
 
     // 3. 触发下载
