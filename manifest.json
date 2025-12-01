@@ -1,5 +1,5 @@
 {
-  "manifest_version": 1,
+  "manifest_version": 3,
   "name": "IEEE Xplore Batch Downloader",
   "version": "1.0",
   "description": "Automate batch downloading of PDFs from IEEE Xplore with confirmation steps.",
@@ -9,7 +9,7 @@
   ],
   "content_scripts": [
     {
-      "matches": ["*://ieeexplore.ieee.org/*"],
+      "matches": ["*://ieeexplore.ieee.org/*", "*://dl.acm.org/action/*"],
       "js": ["content.js"],
       "css": ["style.css"]
     }
